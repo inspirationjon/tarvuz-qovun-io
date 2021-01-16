@@ -11,7 +11,7 @@ async function app(melonName, melonCount, pathName) {
 
   const data = await io.read();
 
-  if (!data.length) {
+  if (!data) {
     await io.write(JSON.stringify([melon], null, 2));
 
   } else if (data) {
