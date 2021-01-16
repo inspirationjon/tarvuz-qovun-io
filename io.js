@@ -17,7 +17,7 @@ class IO {
 		return read(this.path, 'utf8');
 	}
 
-	write() {
+	write(content) {
 		return write(this.path, content);
 	}
 }

@@ -12,7 +12,11 @@ const io = new IO(pathName);
 async function main() {
 	const data = await io.read();
 	const dataParsed = JSON.parse(data);
-	console.log(dataParsed);
+
+	if (dataParsed.length === 0 || dataParsed.length === 1) {
+		dataParsed.push(melon);
+		await io.write(JSON.stringify(dataParsed));
+	}
 }
 
 main();
