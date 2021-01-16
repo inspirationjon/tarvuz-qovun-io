@@ -14,12 +14,13 @@ async function sell() {
 		return melon.melonName === melonName;
 	});
 
-	if (found.melonNumber - melonCount >= 0) {
-		found.melonNumber -= Number(melonCount);
+	if (found.remained - melonCount >= 0) {
+		found.remained -= Number(melonCount);
+		found.sold += Number(melonCount);
 		await io.write(JSON.stringify(dataParsed));
 	} else {
 		console.log(
-			`Sorry, you have ${found.melonNumber} ${found.melonName} to sell`
+			`Sorry, you have ${found.remained} ${found.melonName} to sell`
 		);
 	}
 
